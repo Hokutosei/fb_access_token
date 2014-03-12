@@ -1,0 +1,17 @@
+{
+  "name": "app01_token",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "jeanepaul",
+  "license": "BSD",
+  "dependencies": {
+    "request": "~2.34.0",
+    "querystring": "~0.2.0",
+    "fbgraph": "~0.2.9"
+  }
+}
