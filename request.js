@@ -1,11 +1,7 @@
 var request = require('request')
   , querystring = require('querystring')
   , log = function(str) { console.log(str) }
-
-var postData={
-    a:1,
-    b:2
-};
+  , graph = require('fbgraph')
 /*
 require('request').post({
     uri:"http://example.com/test",
@@ -30,5 +26,12 @@ function postRequest(data, url, callback) {
       //log(res.statusCode);
   })
 }
-
 module.exports.postRequest = postRequest;
+
+
+module.exports.extendAccessToken = function(postData, callback) {
+  graph.extendAccessToken(postData, function(err, facebookRes) {
+    if(err) throw err;
+    callback(null, facebookRes);
+  })
+}
