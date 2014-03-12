@@ -13,6 +13,7 @@
     "request": "~2.34.0",
     "querystring": "~0.2.0",
     "fbgraph": "~0.2.9",
-    "mongoose": "~3.8.8"
+    "mongoose": "~3.8.8",
+    "async": "~0.2.10"
   }
 }
