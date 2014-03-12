@@ -14,7 +14,6 @@ module.exports = {
   AccessToken: AccessToken,
   
   findOne: function(callback) {
-    console.log('called')
     AccessToken.find({}, {}, {sort:{_id:-1}, limit:1}, function(err, resp) {
       callback(null, resp[0])
     })
