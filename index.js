@@ -8,7 +8,7 @@ function main() {
     log(facebookRes)
     log('----------------------------------------------- ' + counter)
     counter++;
-    setTimeout(main, 5000)
+    setTimeout(main, 30000)
   })
 }
 
