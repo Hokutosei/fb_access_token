@@ -28,7 +28,6 @@ function postRequest(data, url, callback) {
 }
 module.exports.postRequest = postRequest;
 
-
 module.exports.extendAccessToken = function(postData, callback) {
   graph.extendAccessToken(postData, function(err, facebookRes) {
     if(err) throw err;
