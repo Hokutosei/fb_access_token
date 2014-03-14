@@ -18,6 +18,14 @@ module.exports = {
     AccessToken.find({}, {}, {sort:{_id:-1}, limit:1}, function(err, resp) {
       callback(null, resp[0])
     })
+  },
+  
+  // count tokens
+  token_count: function(callback) {
+    AccessToken.count(function(err, count) {
+      if(err) throw err;
+      callback(null, count)
+    })
   }
 
 }

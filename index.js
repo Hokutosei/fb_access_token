@@ -30,7 +30,12 @@ function main() {
             callback(null, (new Date() - start_save) + ' ms')
           })
         })      
-      }
+      },
+    tokenCount: function(callback) {
+      model.token_count(function(err, count) {
+        callback(null, count)
+      })
+    }    
   }, function(err, result) {
       log(result)
       log(moment().zone('+09:00')['_d'].toString().slice(0, 24))
