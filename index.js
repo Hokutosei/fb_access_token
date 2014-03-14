@@ -4,6 +4,7 @@ var request = require('./request.js')
     , counter = 0
     , model = require('./model')
     , async = require('async')
+    , moment = require('moment')
 
 function main() {
   var last_token = '';
@@ -19,6 +20,8 @@ function main() {
       },
     requestToken: function(callback) {
         request.extendAccessToken(conf.postData(last_token), function(err, facebookRes) {
+          facebookRes['token_length'] = facebookRes.access_token.length
+          facebookRes['created_at'] = moment().zone('+09:00')['_d'].toString().slice(0, 24)
           var access_token = new model.AccessToken(facebookRes);
           var start_save = new Date()
           access_token.save(function(err, resp) {
@@ -30,6 +33,7 @@ function main() {
       }
   }, function(err, result) {
       log(result)
+      log(moment().zone('+09:00')['_d'].toString().slice(0, 24))
       log('----------------------------------------------- ' + counter)
       counter++;
       setTimeout(main, 30000)    

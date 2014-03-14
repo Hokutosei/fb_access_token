@@ -14,6 +14,7 @@
     "querystring": "~0.2.0",
     "fbgraph": "~0.2.9",
     "mongoose": "~3.8.8",
-    "async": "~0.2.10"
+    "async": "~0.2.10",
+    "moment": "~2.5.1"
   }
 }
